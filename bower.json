@@ -1,0 +1,17 @@
+{
+  "name": "grunt-skeleton",
+  "version": "0.0.0",
+  "authors": [
+    "kas-cor <kascorp@gmail.com>"
+  ],
+  "description": "My Grunt Skeleton",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
