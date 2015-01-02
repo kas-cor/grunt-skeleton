@@ -38,14 +38,6 @@ $main_menu = array(
 );
 
 /*
- * Controlers modules
- */
-$ctrl_modules = array(
-    "main" => "main.inc",
-	"page" => "page.inc"
-);
-
-/*
  * Functions
  */
 include_once "func.php";

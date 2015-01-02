@@ -78,9 +78,11 @@ module.exports = function (grunt) {
 				destCss: '_dev/css/sprites.css'
 			}
 		},
+		/*
 		php: {
         	watch: {}
     	},
+    	*/
 		watch: {
 			style: {
 				files: [
@@ -123,5 +125,6 @@ module.exports = function (grunt) {
 		'style',
 		'imagemin'
 	]);
-	grunt.registerTask('serv', ['php:watch', 'watch']);
+
+	//grunt.registerTask('serv', ['php:watch', 'watch']);
 };

@@ -84,14 +84,14 @@ function get_next_id($table) {
  */
 
 function get_one_cell($table, $cell, $where = "1") {
-	return @mysql_result(mysql_query("SELECT `$cell` FROM `$table` WHERE $where"), 0, "$cell");
+	return @mysql_result(mysql_query("SELECT `$cell` FROM `$table` WHERE $where"), 0, $cell);
 }
 
 /*
  * Soft redirect JS
  */
 
-function redirect_soft($url) {
+function redirect_soft($url = "") {
 	echo "<script type=\"text/javascript\">window.location.href=\"/$url\"</script>\n";
 }
 

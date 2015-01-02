@@ -4,8 +4,8 @@ include_once "config.php";
 
 unset($_SESSION['msg']);
 
-if (isset($ctrl_modules[$_POST['modul']])) {
-   include_once "ctrl/" . $ctrl_modules[$_POST['modul']];
+if (file_exists("ctrl/" . $_POST['modul']. ".inc")) {
+   include_once "ctrl/" . $_POST['modul']. ".inc";
 } else {
    redirect_hard();
 }
