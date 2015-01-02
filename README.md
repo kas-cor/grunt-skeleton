@@ -10,7 +10,10 @@ npm install -g grunt-cli
 
 Clone repo:
 ```bash
-git clone https://github.com/kas-cor/grunt-skeleton.git && cd grunt-skeleton
-npm install && bower install
-grunt && grunt watch
+git clone https://github.com/kas-cor/grunt-skeleton.git [project_name]
+cd grunt-skeleton [project_name]
+npm install
+bower install
+grunt
+grunt watch
 ```
