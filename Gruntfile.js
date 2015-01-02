@@ -1,4 +1,7 @@
 module.exports = function (grunt) {
+	
+	require('time-grunt')(grunt);
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -75,6 +78,9 @@ module.exports = function (grunt) {
 				destCss: '_dev/css/sprites.css'
 			}
 		},
+		php: {
+        	watch: {}
+    	},
 		watch: {
 			style: {
 				files: [
@@ -94,15 +100,6 @@ module.exports = function (grunt) {
 		}
 
 	});
-
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-bower-concat');
-	grunt.loadNpmTasks('grunt-spritesmith');
 
 	grunt.registerTask('default', [
 		'bower_concat',
@@ -126,4 +123,5 @@ module.exports = function (grunt) {
 		'style',
 		'imagemin'
 	]);
+	grunt.registerTask('serv', ['php:watch', 'watch']);
 };
