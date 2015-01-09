@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+      dev: '_dev',
 		banner: '/*!\n' +
 				' * <%= pkg.name %> v<%= pkg.version %>\n' +
 				' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
@@ -13,15 +14,15 @@ module.exports = function (grunt) {
 				' */\n',
 		bower_concat: {
 			all: {
-				dest: '_dev/js/bower.js',
-				cssDest: '_dev/css/bower.css'
+				dest: '<%= dev %>/js/bower.js',
+				cssDest: '<%= dev %>/css/bower.css'
 			}
 		},
 		less: {
 			dev: {
 				options: {},
 				files: {
-					"_dev/css/style.css": "_dev/css/*.less"
+					"<%= dev %>/css/style.css": "_dev/css/*.less"
 				}
 			}
 		},
@@ -32,7 +33,7 @@ module.exports = function (grunt) {
 					keepSpecialComments: false
 				},
 				files: {
-					'css/style.min.css': ['_dev/css/*.css']
+					'css/style.min.css': ['<%= dev %>/css/*.css']
 				}
 			}
 		},
@@ -45,12 +46,12 @@ module.exports = function (grunt) {
 			},
 			my_target: {
 				files: {
-					'js/script.min.js': ['_dev/js/*.js']
+					'js/script.min.js': ['<%= dev %>/js/*.js']
 				}
 			}
 		},
 		jshint: {
-			files: ['Gruntfile.js', '_dev/js/script.js'],
+			files: ['Gruntfile.js', '<%= dev %>/js/script.js'],
 			options: {
 				reporter: require('jshint-stylish'),
 				globals: {
@@ -65,7 +66,7 @@ module.exports = function (grunt) {
 			all: {
 				files: [{
 						expand: true,
-						cwd: '_dev/img/',
+						cwd: '<%= dev %>/img/',
 						src: ['*.{png,jpg,gif}'],
 						dest: 'img/'
 					}]
@@ -73,9 +74,9 @@ module.exports = function (grunt) {
 		},
 		sprite: {
 			all: {
-				src: '_dev/img/icon/*.png',
+				src: '<%= dev %>/img/icon/*.png',
 				dest: 'img/spritesheet.png',
-				destCss: '_dev/css/sprites.css'
+				destCss: '<%= dev %>/css/sprites.css'
 			}
 		},
 		/*
@@ -86,17 +87,17 @@ module.exports = function (grunt) {
 		watch: {
 			style: {
 				files: [
-					'_dev/css/*',
-					'_dev/img/icon/*'
+					'<%= dev %>/css/*',
+					'<%= dev %>/img/icon/*'
 				],
 				tasks: ['style']
 			},
 			script: {
-				files: ['_dev/js/*'],
+				files: ['<%= dev %>/js/*'],
 				tasks: ['script']
 			},
 			image: {
-				files: ['_dev/img/*'],
+				files: ['<%= dev %>/img/*'],
 				tasks: ['imagemin']
 			}
 		}

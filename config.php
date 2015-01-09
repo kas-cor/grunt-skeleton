@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Author:
- * E-mail:
+ * Author: kas-cor
+ * E-mail: kascorp@gmail.com
+ * GitHub: https://github.com/kas-cor/grunt-skeleton.git
  */
 Error_Reporting(E_ALL & ~E_NOTICE);
 

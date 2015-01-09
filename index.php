@@ -17,7 +17,11 @@ $p = isset($main_menu[$p]) ? $p : "main";
          </div>
          <div class="row">
             <?php
-            include_once "view/" . $p . ".inc";
+            if (file_exists("view/" . $p . ".php")) {
+               include_once "view/" . $p . ".php";
+            } else {
+               redirect_soft("error404.html");
+            }
             ?>
          </div>
       </div>
